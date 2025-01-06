@@ -127,31 +127,31 @@ section {
 }
 
 /* Awal posisi: di luar layar (samping kiri) */
-/* .animate-slide {
+.animate-slide {
     opacity: 0;
     transform: translateX(-100%);
     transition: all 0.8s ease-out;
-} */
+}
 
 /* Ketika elemen terlihat di layar */
-/* .animate-slide.visible {
+.animate-slide.visible {
     opacity: 1;
     transform: translateX(0);
-} */
+}
 
 /* Efek mengambang */
-/* .project.animate-slide.visible {
+.project.animate-slide.visible {
     animation: float 2s ease-in-out infinite;
-} */
+}
 
-/* @keyframes float {
+@keyframes float {
     0%, 100% {
         transform: translateY(0);
     }
     50% {
         transform: translateY(-10px);
     }
-} */
+}
 
 
 .animate {
