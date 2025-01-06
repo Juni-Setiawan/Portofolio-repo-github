@@ -29,23 +29,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }, nameText.length * 150 + 500); // Wait until name typing finishes
     });    
 
-    // document.addEventListener("DOMContentLoaded", function () {
-    //     const animatedElements = document.querySelectorAll('.animate');
+    document.addEventListener("DOMContentLoaded", function () {
+        const animatedElements = document.querySelectorAll('.animate');
     
-    //     function handleScroll() {
-    //         animatedElements.forEach(element => {
-    //             const rect = element.getBoundingClientRect();
-    //             const isVisible = rect.top <= window.innerHeight && rect.bottom >= 0;
+        function handleScroll() {
+            animatedElements.forEach(element => {
+                const rect = element.getBoundingClientRect();
+                const isVisible = rect.top <= window.innerHeight && rect.bottom >= 0;
     
-    //             if (isVisible) {
-    //                 element.classList.add('visible');
-    //             }
-    //         });
-    //     }
+                if (isVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
     
-    //     window.addEventListener('scroll', handleScroll);
-    //     handleScroll(); // Panggil sekali untuk elemen yang sudah terlihat
-    // });
+        window.addEventListener('scroll', handleScroll);
+        handleScroll(); // Panggil sekali untuk elemen yang sudah terlihat
+    });
 
     
     document.addEventListener("DOMContentLoaded", function () {
