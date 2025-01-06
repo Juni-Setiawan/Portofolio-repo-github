@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1 id="typing-name"></h1>
+            <p id="typing-description"></p>
+        </div>
+    </header>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const nameElement = document.getElementById("typing-name");
+            const descriptionElement = document.getElementById("typing-description");
+    
+            const nameText = "JUNI SETIAWAN";
+            const descriptionText = "Web Developer | Desainer | Machine Learning";
+    
+            function typeEffect(element, text, delay = 100) {
+                let i = 0;
+                function typeChar() {
+                    if (i < text.length) {
+                        element.textContent += text.charAt(i);
+                        i++;
+                        setTimeout(typeChar, delay);
+                    }
+                }
+                typeChar();
+            }
+    
+            // Apply typing effect sequentially
+            typeEffect(nameElement, nameText, 150);
+            setTimeout(() => {
+                typeEffect(descriptionElement, descriptionText, 100);
+            }, nameText.length * 150 + 500); // Wait until name typing finishes
+        });
+    </script>
+    
+    <nav>
+        <ul>
+            <li><a href="#about" class="nav-link">Tentang Saya</a></li>
+            <li><a href="#projects" class="nav-link">Proyek</a></li>
+            <li><a href="#contact" class="nav-link">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="animate">Tentang Saya</h2>
+            <p class="animate">
+                Saya merupakan mahasiswa di universitas jember prodi Teknologi Informasi, yang baru saja dinyatakan lulus (freshgraduate). Saya mempunyai pengalaman magang selama 5 bulan, saya menjadi bagian tim internal dari perusahaan tersebut, pada devisi Development and Operation, ketika magang saya menggunakan Laravel yang telah ditentukan oleh perusahaan untuk menyelesaikan project magang tersebut. Selain itu saya juga membuat sebuah project untuk syarat kelulusan yaitu Software Defect, selain itu jurnal dari project yang dibuat telah dipublikasikan di website Kinetik Journal.
+            </p>
+            <img src="Juni.jpeg" alt="Foto Profil" class="animate">
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const animatedElements = document.querySelectorAll('.animate');
+    
+            function handleScroll() {
+                animatedElements.forEach(element => {
+                    const rect = element.getBoundingClientRect();
+                    const isVisible = rect.top <= window.innerHeight && rect.bottom >= 0;
+    
+                    if (isVisible) {
+                        element.classList.add('visible');
+                    }
+                });
+            }
+    
+            window.addEventListener('scroll', handleScroll);
+            handleScroll();
+        });
+    </script>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Proyek</h2>
+            <div class="project animate-slide">
+                <img src="SIAKAD.jpg" alt="Proyek 1">
+                <h4><a href="https://bisa.ai/portofolio/detail/MjQwOA" target="_blank" rel="noopener noreferrer">SIAKAD</a></h4>
+                <p>Pada project tersebut membuat sebuah SIAKAD(Sistem Informasi Akademik), yang digunakan sebagai salah satu keperluan sekolah atau kampus yang belum mempunyai SIAKAD, sistem SIAKAD sendiri digunakan untuk mahasiswa, guru, dan dosen, untuk melakukan absen dan memberikan tugas melalui SIAKAD.</p>
+            </div>
+            <div class="project animate-slide">
+                <img src="SOFTWARE.jpg" alt="Proyek 2">
+                <h4><a href="https://colab.research.google.com/drive/1cfSVyezerQQinXq5j2A-zp-u_vymdxR6?usp=sharing" target="_blank" rel="noopener noreferrer">SOFTWARE DEFECT</a></h4>
+                <p>Merupakan sebuah project yang menggunakan beberapa Dataset NASA, dalam project tersebut saya meneliti dari beberapa dataset untuk mengetahui akurasi dari setiap dataset, dengan cara eksekusi menggunakan beberapa metode Machine Learning yang digabungkan dengan metode lain untuk meningkatkan akurasi dari dataset NASA yang digunakan. jurnal dari project tersebut sudah dipublikasikan disebuah platform Kinetik Journal. klik dibawah ini </p>
+                <h4><a href="https://kinetik.umm.ac.id/index.php/kinetik/article/view/2038" target="_blank" rel="noopener noreferrer">Kinetik Jurnal</a></h4>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const elements = document.querySelectorAll('.animate-slide');
+    
+            function handleScroll() {
+                elements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    const isVisible = rect.top <= window.innerHeight && rect.bottom >= 0;
+    
+                    if (isVisible) {
+                        el.classList.add('visible');
+                    }
+                });
+            }
+    
+            window.addEventListener('scroll', handleScroll);
+            handleScroll();
+        });
+    </script>
+    
+
+    <section id="contact">
+        <div class="container">
+            <h2>Kontak</h2>
+            <p>Hubungi saya di:</p>
+            <ul>
+                <li>Email: <a href="mailto:email@example.com">junisetiawanjuni818@gmail.com</a></li>
+                <li>Telepon: 083117393025</li>
+                <li>LinkedIn: <a href="https://linkedin.com/in/username">https://www.linkedin.com/in/juni-setiawan-49398a336/</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; Juni Setawan</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
